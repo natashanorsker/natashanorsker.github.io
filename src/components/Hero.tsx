@@ -19,7 +19,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-light mb-6 leading-tight">
-              Powering Innovation with <span className="text-brand-green">Big Data Energy</span>
+              Powering Your Business With AI - <span className="text-brand-green">From Idea to Implementation</span>
             </h1>
             
             <p className="text-lg text-brand-light/80 mb-8 max-w-lg">
