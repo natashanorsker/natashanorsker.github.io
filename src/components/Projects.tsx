@@ -5,45 +5,45 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const projects = [
   {
-    category: "data-science",
+    category: "client-work",
     name: "Customer Segmentation Analysis",
     description: "Advanced clustering algorithms to segment customers based on purchase behavior and demographics.",
     tags: ["Python", "Machine Learning", "K-means", "Data Visualization"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    category: "ai",
+    category: "workshops-strategy",
     name: "Predictive Maintenance System",
     description: "AI-powered system to predict equipment failures before they occur, reducing downtime and maintenance costs.",
     tags: ["TensorFlow", "Time Series Analysis", "IoT", "Cloud Computing"],
     image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    category: "development",
+    category: "client-work",
     name: "Real-time Analytics Dashboard",
     description: "Interactive web application for monitoring and analyzing business metrics in real-time.",
     tags: ["React", "D3.js", "Node.js", "WebSockets"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    category: "data-science",
-    name: "Sales Forecasting Model",
-    description: "Time series forecasting model to predict future sales based on historical data and external factors.",
-    tags: ["R", "ARIMA", "Statistical Modeling", "Tableau"],
+    category: "public-speaking",
+    name: "AI Ethics Conference Keynote",
+    description: "Delivered keynote address on responsible AI development and implementation at international tech conference.",
+    tags: ["AI Ethics", "Public Speaking", "Technology Policy", "Thought Leadership"],
     image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    category: "ai",
-    name: "Natural Language Processing Service",
-    description: "API service for sentiment analysis, entity recognition, and text classification using advanced NLP models.",
-    tags: ["BERT", "spaCy", "FastAPI", "Docker"],
+    category: "nominations-awards",
+    name: "Women in Tech Leadership Award",
+    description: "Recognized for contributions to advancing women's representation and leadership in the AI and data science fields.",
+    tags: ["Women in Tech", "Leadership", "Diversity in AI", "Industry Recognition"],
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    category: "development",
-    name: "Data Pipeline Architecture",
-    description: "Scalable ETL pipeline for processing and storing large volumes of structured and unstructured data.",
-    tags: ["Apache Spark", "Kafka", "AWS", "Airflow"],
+    category: "workshops-strategy",
+    name: "Data Strategy Workshop Series",
+    description: "Designed and facilitated workshop series helping enterprise clients develop comprehensive data and AI strategies.",
+    tags: ["Strategic Planning", "Workshop Facilitation", "Change Management", "Data Governance"],
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
   }
 ];
@@ -69,10 +69,11 @@ const Projects = () => {
         <Tabs defaultValue="all" className="w-full">
           <div className="flex justify-center mb-10">
             <TabsList className="bg-brand-teal/30 backdrop-blur-sm">
-              <TabsTrigger value="all" className="text-sm">All Projects</TabsTrigger>
-              <TabsTrigger value="data-science" className="text-sm">Data Science</TabsTrigger>
-              <TabsTrigger value="ai" className="text-sm">AI Engineering</TabsTrigger>
-              <TabsTrigger value="development" className="text-sm">Development</TabsTrigger>
+              <TabsTrigger value="all" className="text-sm">All</TabsTrigger>
+              <TabsTrigger value="client-work" className="text-sm">Client Work</TabsTrigger>
+              <TabsTrigger value="workshops-strategy" className="text-sm">Workshops & Strategy</TabsTrigger>
+              <TabsTrigger value="public-speaking" className="text-sm">Public Speaking</TabsTrigger>
+              <TabsTrigger value="nominations-awards" className="text-sm">Nominations & Awards</TabsTrigger>
             </TabsList>
           </div>
           

@@ -113,3 +113,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Add this to your existing CSS */
+[id^="service-"] {
+  scroll-margin-top: 100px; /* Adjust this value as needed */
+}

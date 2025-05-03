@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import TypedLogoText from "./TypedLogoText";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,6 @@ const Navbar = () => {
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -39,8 +39,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="text-brand-green font-bold text-xl">
-              BIG DATA ENERGY
+            <a href="#" className="flex items-center">
+              <TypedLogoText />
             </a>
           </div>
 
@@ -55,9 +55,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium">
-              Get in Touch
-            </Button>
+            <a href="#contact">
+              <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium">
+                Get in Touch
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -83,9 +85,11 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium w-full">
-                Get in Touch
-              </Button>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium w-full">
+                  Get in Touch
+                </Button>
+              </a>
             </div>
           </nav>
         )}

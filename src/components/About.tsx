@@ -1,5 +1,5 @@
 
-import { ArrowRight, Award, ChartLine, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -16,27 +16,16 @@ const About = () => {
             <h2 className="section-title">Transforming Data into Strategic Advantages</h2>
             
             <p className="text-brand-light/80 mb-6 text-lg">
-              I'm a data scientist, AI engineer, and developer with a passion for solving complex problems using cutting-edge technology and data-driven approaches.
+              I'm a freelance data scientist and ML engineer with a degree in AI & Data from DTU, 6+ years of hands-on experience in the field of AI, and a track record of delivering real-world AI impact across industries.
+            </p>
+            
+            <p className="text-brand-light/70 mb-6">
+              I've worked as an AI consultant, led technical projects in fast-moving teams, facilitated workshops, and advised decision-makers. I'm a certified Google Cloud Professional Machine Learning Engineer, the founder of Women in AI Denmark, and have been nominated for multiple tech awards.
             </p>
             
             <p className="text-brand-light/70 mb-8">
-              With extensive experience across multiple industries, I help organizations unlock the value in their data through custom solutions that drive growth, efficiency, and innovation. My approach combines technical expertise with strategic thinking to deliver results that align with business objectives.
+              What sets me apart is my ability to move fluidly between strategy and execution — from shaping AI ideas to building full-stack solutions ready for production. Whether I'm working with international teams or speaking to 650+ people, I focus on cutting through complexity and helping businesses make AI work.
             </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-brand-green text-4xl font-bold mb-2">7+</div>
-                <p className="text-brand-light/70">Years Experience</p>
-              </div>
-              <div className="text-center">
-                <div className="text-brand-green text-4xl font-bold mb-2">50+</div>
-                <p className="text-brand-light/70">Projects Completed</p>
-              </div>
-              <div className="text-center">
-                <div className="text-brand-green text-4xl font-bold mb-2">25+</div>
-                <p className="text-brand-light/70">Happy Clients</p>
-              </div>
-            </div>
             
             <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium">
               Download CV
@@ -44,47 +33,13 @@ const About = () => {
             </Button>
           </div>
           
-          <div className="space-y-8">
-            <div className="card flex p-6">
-              <div className="mr-6">
-                <div className="p-4 bg-brand-green/20 rounded-lg">
-                  <ChartLine className="text-brand-green" size={30} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-brand-light mb-2">Data-Driven Approach</h3>
-                <p className="text-brand-light/70">
-                  I leverage advanced analytics and statistical methods to extract meaningful insights from complex datasets, enabling informed decision-making and strategic planning.
-                </p>
-              </div>
-            </div>
-            
-            <div className="card flex p-6">
-              <div className="mr-6">
-                <div className="p-4 bg-brand-green/20 rounded-lg">
-                  <Users className="text-brand-green" size={30} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-brand-light mb-2">Collaborative Process</h3>
-                <p className="text-brand-light/70">
-                  I work closely with clients to understand their unique challenges and requirements, ensuring solutions are tailored to their specific needs and objectives.
-                </p>
-              </div>
-            </div>
-            
-            <div className="card flex p-6">
-              <div className="mr-6">
-                <div className="p-4 bg-brand-green/20 rounded-lg">
-                  <Award className="text-brand-green" size={30} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-brand-light mb-2">Quality & Innovation</h3>
-                <p className="text-brand-light/70">
-                  I prioritize high-quality, innovative solutions that not only address current challenges but also position clients for future success in an evolving technological landscape.
-                </p>
-              </div>
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-md overflow-hidden rounded-xl shadow-xl">
+              <img 
+                src="/images/speaking-panel.jpg" 
+                alt="Speaking at a professional panel" 
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
