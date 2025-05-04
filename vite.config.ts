@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", // Use relative paths
+  base: "./", // Use relative paths for assets
   server: {
     host: "::",
     port: 8080,

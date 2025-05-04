@@ -15,6 +15,8 @@ indexContent = indexContent.replace(/<link rel="preload"[^>]*index-\[hash\][^>]*
 indexContent = indexContent.replace(/src="\/assets\//g, 'src="./assets/');
 indexContent = indexContent.replace(/href="\/assets\//g, 'href="./assets/');
 indexContent = indexContent.replace(/href="\/vite.svg/g, 'href="./vite.svg');
+indexContent = indexContent.replace(/src="https:\/\/bigdataenergy\.tech\/assets\//g, 'src="./assets/');
+indexContent = indexContent.replace(/href="https:\/\/bigdataenergy\.tech\/assets\//g, 'href="./assets/');
 
 // Write the updated content back to the file
 fs.writeFileSync(indexPath, indexContent);
@@ -24,3 +26,7 @@ console.log('Fixed HTML files');
 // Create a copy of index.html as 404.html
 fs.copyFileSync(indexPath, path.join(docsDir, '404.html'));
 console.log('Created 404.html');
+
+// Create .nojekyll file
+fs.writeFileSync(path.join(docsDir, '.nojekyll'), '');
+console.log('Created .nojekyll file');
