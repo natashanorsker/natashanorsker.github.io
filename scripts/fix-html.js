@@ -18,27 +18,17 @@ indexContent = indexContent.replace(/href="\/vite.svg/g, 'href="./vite.svg');
 indexContent = indexContent.replace(/src="https:\/\/bigdataenergy\.tech\/assets\//g, 'src="./assets/');
 indexContent = indexContent.replace(/href="https:\/\/bigdataenergy\.tech\/assets\//g, 'href="./assets/');
 
-// Add proper MIME type hints for GitHub Pages
-const htaccessContent = `
-# Proper MIME type for JavaScript modules
-<IfModule mod_mime.c>
-  AddType application/javascript .js
-  AddType text/css .css
-</IfModule>
-`;
+// Change module scripts to regular scripts for GitHub Pages compatibility
+indexContent = indexContent.replace(/type="module"/g, 'type="text/javascript"');
 
 // Write the updated content back to the file
 fs.writeFileSync(indexPath, indexContent);
 console.log('Fixed HTML files');
 
-// Create a .htaccess file to set correct MIME types
-fs.writeFileSync(path.join(docsDir, '.htaccess'), htaccessContent);
-console.log('Created .htaccess file for MIME types');
+// Create a .nojekyll file to prevent GitHub from ignoring files that begin with an underscore
+fs.writeFileSync(path.join(docsDir, '.nojekyll'), '');
+console.log('Created .nojekyll file');
 
 // Create a copy of index.html as 404.html
 fs.copyFileSync(indexPath, path.join(docsDir, '404.html'));
 console.log('Created 404.html');
-
-// Create .nojekyll file
-fs.writeFileSync(path.join(docsDir, '.nojekyll'), '');
-console.log('Created .nojekyll file');

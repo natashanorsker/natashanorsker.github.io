@@ -32,12 +32,16 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
     sourcemap: true,
     emptyOutDir: true,
+    // Use legacy build mode to avoid MIME type issues with GitHub Pages
+    target: 'es2015',
     rollupOptions: {
       output: {
         // Ensure proper MIME types by using standard extensions
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Use IIFE format instead of ESM for GitHub Pages compatibility
+        format: 'iife'
       }
     }
   }
