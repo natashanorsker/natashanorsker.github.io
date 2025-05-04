@@ -31,6 +31,14 @@ export default defineConfig(({ mode }) => ({
     outDir: "docs",
     assetsDir: "assets",
     sourcemap: true,
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Ensure proper MIME types by using standard extensions
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   }
 }));
