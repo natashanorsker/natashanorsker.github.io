@@ -28,14 +28,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist",
+    outDir: "docs", // GitHub Pages can serve from /docs folder in main branch
     assetsDir: "assets",
     sourcemap: true,
-    emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    emptyOutDir: true
   }
 }));
