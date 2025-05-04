@@ -5,10 +5,17 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    // Check if this is a hash route that should be handled differently
+    const path = location.pathname;
+    if (path.startsWith('/projects') || path.startsWith('/services') || path.startsWith('/about')) {
+      // This might be a direct navigation to a section that should use hash
+      window.location.href = `/#${path.substring(1)}`;
+    } else {
+      console.error(
+        "404 Error: User attempted to access non-existent route:",
+        location.pathname
+      );
+    }
   }, [location.pathname]);
 
   return (

@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: "https://bigdataenergy.tech/", // Use absolute URL for your custom domain
   server: {
     host: "::",
     port: 8080,
@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "docs", // GitHub Pages can serve from /docs folder in main branch
+    outDir: "docs",
     assetsDir: "assets",
     sourcemap: true,
     emptyOutDir: true
