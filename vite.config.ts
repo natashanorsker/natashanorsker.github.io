@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "https://bigdataenergy.tech/", // Use absolute URL for your custom domain
+  base: "./", // Use relative paths
   server: {
     host: "::",
     port: 8080,

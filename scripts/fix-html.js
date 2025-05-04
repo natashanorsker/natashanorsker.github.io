@@ -11,6 +11,11 @@ let indexContent = fs.readFileSync(indexPath, 'utf8');
 // Remove any preload links with [hash] placeholders
 indexContent = indexContent.replace(/<link rel="preload"[^>]*index-\[hash\][^>]*>/g, '');
 
+// Convert absolute paths to relative paths
+indexContent = indexContent.replace(/src="\/assets\//g, 'src="./assets/');
+indexContent = indexContent.replace(/href="\/assets\//g, 'href="./assets/');
+indexContent = indexContent.replace(/href="\/vite.svg/g, 'href="./vite.svg');
+
 // Write the updated content back to the file
 fs.writeFileSync(indexPath, indexContent);
 
