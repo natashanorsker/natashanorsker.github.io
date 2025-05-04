@@ -72,18 +72,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-brand-teal/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-brand-light/50 text-sm mb-4 md:mb-0">
+        <div className="text-center">
+          <p className="text-brand-light/50 text-sm">
             &copy; {currentYear} Big Data Energy. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <a href="#" className="text-brand-light/50 text-sm hover:text-brand-green transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-brand-light/50 text-sm hover:text-brand-green transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>

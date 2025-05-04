@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import TypedLogoText from "./TypedLogoText";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,11 +24,20 @@ const Navbar = () => {
     };
   }, []);
 
+  // Function to scroll to section
+  const scrollToSection = (sectionId: string) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
+    { name: "Home", id: "home" },
+    { name: "Services", id: "services" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
   ];
 
   return (
@@ -39,27 +49,27 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="flex items-center">
+            <Link to="/" className="flex items-center" onClick={() => scrollToSection('home')}>
               <TypedLogoText />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => scrollToSection(link.id)}
                 className="text-brand-light hover:text-brand-green transition-colors text-sm font-medium"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
-            <a href="#contact">
+            <button onClick={() => scrollToSection('contact')}>
               <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium">
                 Get in Touch
               </Button>
-            </a>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -74,22 +84,21 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 bg-brand-dark/95 backdrop-blur-md p-4 rounded-lg shadow-lg">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="text-brand-light hover:text-brand-green transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-brand-light hover:text-brand-green transition-colors font-medium text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+              <button onClick={() => scrollToSection('contact')}>
                 <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium w-full">
                   Get in Touch
                 </Button>
-              </a>
+              </button>
             </div>
           </nav>
         )}

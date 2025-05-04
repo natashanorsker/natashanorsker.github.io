@@ -98,22 +98,22 @@ const LogoWithTextAndAnimation: React.FC = () => {
   }, [isHovering, blink]);
   
   return (
-    <div className="flex items-center">
+    <div className="flex flex-col sm:flex-row items-center">
       {/* Animated Logo */}
       <div className="relative" ref={logoRef}>
         <img 
           src={`/logo-animation/logo-sprite-${currentFrame}.svg`}
           alt="Big Data Energy Logo" 
-          className="w-full h-auto max-w-[200px]" 
+          className="w-full h-auto max-w-[150px] sm:max-w-[200px]" 
         />
       </div>
       
       {/* Text Logo */}
-      <div className="ml-4">
+      <div className="mt-4 sm:mt-0 sm:ml-4">
         <img 
           src="/logo-text.svg" 
           alt="Big Data Energy Text" 
-          className="w-full h-auto max-w-[400px]" 
+          className="w-full h-auto max-w-[200px] sm:max-w-[300px] md:max-w-[400px]" 
         />
       </div>
     </div>

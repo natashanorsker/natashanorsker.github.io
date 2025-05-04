@@ -118,7 +118,7 @@ const LogoWithBlinkingEyes: React.FC<LogoWithBlinkingEyesProps> = ({
       <img 
         src={`/logo-animation/logo-sprite-${currentFrame}.svg`}
         alt="Big Data Energy Logo" 
-        className={size}
+        className={`${size} max-w-[90%] sm:max-w-full`}
         style={{ objectFit: 'contain' }}
       />
     </div>
