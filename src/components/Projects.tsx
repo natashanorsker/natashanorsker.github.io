@@ -118,7 +118,7 @@ const Projects = () => {
         
         <div className="mt-12 text-center">
           <Button variant="outline" className="border-brand-green text-brand-green hover:bg-brand-green/10">
-            View All Projects
+            <a href="#projects">View All Projects</a>
             <ArrowRight className="ml-2" size={16} />
           </Button>
         </div>
