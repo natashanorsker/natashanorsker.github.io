@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://natashanorsker.github.io",
+  "homepage": "https://bigdataenergy.tech",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && node scripts/fix-html.js",
