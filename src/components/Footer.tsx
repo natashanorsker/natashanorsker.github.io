@@ -9,7 +9,33 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
-            <h3 className="font-logo text-bde-violet text-xl font-bold tracking-logo mb-4">BIG DATA ENERGY</h3>
+            <div className="flex tracking-wider items-center h-[20px] mb-4">
+              {[
+                { char: "B", svg: "/logo-text/B.svg" },
+                { char: "I", svg: "/logo-text/I.svg" },
+                { char: "G", svg: "/logo-text/G.svg" },
+                { char: " ", svg: null },
+                { char: "D", svg: "/logo-text/D.svg" },
+                { char: "A", svg: "/logo-text/A.svg" },
+                { char: "T", svg: "/logo-text/T.svg" },
+                { char: "A", svg: "/logo-text/A.svg" },
+                { char: " ", svg: null },
+                { char: "E", svg: "/logo-text/E.svg" },
+                { char: "N", svg: "/logo-text/N.svg" },
+                { char: "E", svg: "/logo-text/E.svg" },
+                { char: "R", svg: "/logo-text/R.svg" },
+                { char: "G", svg: "/logo-text/G.svg" },
+                { char: "Y", svg: "/logo-text/Y.svg" },
+              ].map((letter, index) => (
+                <span key={index} className="h-[20px] flex items-center mx-0.5">
+                  {letter.svg ? (
+                    <img src={letter.svg} alt={letter.char} className="h-full w-auto" />
+                  ) : (
+                    <span className="w-2">&nbsp;</span>
+                  )}
+                </span>
+              ))}
+            </div>
             <p className="font-display font-normal text-bde-frost/70 mb-6 max-w-md text-[14px] leading-body">
               Helping businesses turn AI ideas into real, working solutions - through strategy, code and collaboration.
             </p>
