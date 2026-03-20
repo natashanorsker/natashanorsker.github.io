@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-brand-dark/90 backdrop-blur-lg shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-bde-void/90 backdrop-blur-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -60,13 +60,13 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className="text-brand-light hover:text-brand-green transition-colors text-sm font-medium"
+                className="text-bde-violet-muted hover:text-bde-frost transition-colors text-sm font-medium"
               >
                 {link.name}
               </button>
             ))}
             <button onClick={() => scrollToSection('contact')}>
-              <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium">
+              <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-medium">
                 Get in Touch
               </Button>
             </button>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-brand-light"
+            className="md:hidden text-bde-frost"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <Menu size={24} />
@@ -84,18 +84,18 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-4 bg-brand-dark/95 backdrop-blur-md p-4 rounded-lg shadow-lg">
+            <div className="flex flex-col space-y-4 bg-bde-void/95 backdrop-blur-md p-4 rounded-lg shadow-lg">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-brand-light hover:text-brand-green transition-colors font-medium text-left"
+                  className="text-bde-violet-muted hover:text-bde-frost transition-colors font-medium text-left"
                 >
                   {link.name}
                 </button>
               ))}
               <button onClick={() => scrollToSection('contact')}>
-                <Button className="bg-brand-green hover:bg-brand-green/80 text-black font-medium w-full">
+                <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-medium w-full">
                   Get in Touch
                 </Button>
               </button>

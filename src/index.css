@@ -7,77 +7,133 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /*
+     * ── BDE Color System ──
+     * Single source of truth. Values are space-separated RGB channels
+     * so Tailwind opacity modifiers (e.g. bg-bde-void/90) work.
+     * Use via Tailwind classes or rgb(var(--bde-*)) in plain CSS.
+     *
+     * Hex reference:
+     *   void #0A0815 | frost #F5F3FF | deep #1C1640 | raised #2A2260
+     *   violet #8A7BF5 | orange #FF7A3D | green #00D97E
+     */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Core surfaces */
+    --bde-void: 10 8 21;
+    --bde-frost: 245 243 255;
+    --bde-deep: 28 22 64;
+    --bde-raised: 42 34 96;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    /* Violet ramp */
+    --bde-violet-lightest: 232 229 255;
+    --bde-violet-soft: 196 188 255;
+    --bde-violet-light: 168 156 248;
+    --bde-violet: 138 123 245;
+    --bde-violet-muted: 144 136 204;
+    --bde-violet-dark: 106 90 224;
+    --bde-violet-darker: 74 58 184;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Orange ramp */
+    --bde-orange-lightest: 255 240 232;
+    --bde-orange-soft: 255 208 184;
+    --bde-orange-light: 255 176 138;
+    --bde-orange: 255 122 61;
+    --bde-orange-dark: 232 96 26;
+    --bde-orange-darker: 192 74 16;
+    --bde-orange-darkest: 138 46 8;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Green ramp */
+    --bde-green-lightest: 232 255 244;
+    --bde-green-soft: 168 245 212;
+    --bde-green-light: 90 219 168;
+    --bde-green: 0 217 126;
+    --bde-green-dark: 0 168 96;
+    --bde-green-darker: 0 120 64;
+    --bde-green-darkest: 0 72 40;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Light-mode surface ramp */
+    --bde-haze: 237 234 255;
+    --bde-mist: 224 219 248;
+    --bde-cloud: 206 200 240;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 142 70% 42%;
+    /* ── Semantic tokens (light mode) ── */
+    --background: var(--bde-frost);
+    --foreground: var(--bde-void);
+
+    --card: var(--bde-haze);
+    --card-foreground: var(--bde-void);
+
+    --popover: var(--bde-frost);
+    --popover-foreground: var(--bde-void);
+
+    --primary: var(--bde-violet);
+    --primary-foreground: var(--bde-void);
+
+    --secondary: var(--bde-mist);
+    --secondary-foreground: var(--bde-void);
+
+    --muted: var(--bde-haze);
+    --muted-foreground: 90 80 128;
+
+    --accent: var(--bde-haze);
+    --accent-foreground: var(--bde-void);
+
+    --destructive: var(--bde-orange-dark);
+    --destructive-foreground: 255 255 255;
+
+    --border: var(--bde-mist);
+    --input: var(--bde-mist);
+    --ring: var(--bde-violet);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--bde-frost);
+    --sidebar-foreground: var(--bde-void);
+    --sidebar-primary: var(--bde-violet);
+    --sidebar-primary-foreground: var(--bde-void);
+    --sidebar-accent: var(--bde-haze);
+    --sidebar-accent-foreground: var(--bde-void);
+    --sidebar-border: var(--bde-mist);
+    --sidebar-ring: var(--bde-violet);
   }
 
   .dark {
-    --background: 195 49% 9%;
-    --foreground: 210 40% 98%;
+    --background: var(--bde-void);
+    --foreground: var(--bde-frost);
 
-    --card: 195 49% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: var(--bde-deep);
+    --card-foreground: var(--bde-frost);
 
-    --popover: 195 49% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--bde-deep);
+    --popover-foreground: var(--bde-frost);
 
-    --primary: 142 70% 42%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--bde-violet);
+    --primary-foreground: var(--bde-void);
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: var(--bde-raised);
+    --secondary-foreground: var(--bde-frost);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: var(--bde-deep);
+    --muted-foreground: var(--bde-violet-soft);
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--bde-deep);
+    --accent-foreground: var(--bde-frost);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--bde-orange-dark);
+    --destructive-foreground: 255 255 255;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142 70% 42%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--bde-deep);
+    --input: var(--bde-deep);
+    --ring: var(--bde-violet);
+
+    --sidebar-background: var(--bde-void);
+    --sidebar-foreground: var(--bde-frost);
+    --sidebar-primary: var(--bde-violet);
+    --sidebar-primary-foreground: var(--bde-void);
+    --sidebar-accent: var(--bde-deep);
+    --sidebar-accent-foreground: var(--bde-frost);
+    --sidebar-border: var(--bde-deep);
+    --sidebar-ring: var(--bde-violet);
   }
 }
 
@@ -87,7 +143,7 @@
   }
 
   body {
-    @apply bg-brand-dark text-brand-light;
+    @apply bg-bde-void text-bde-frost;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -96,11 +152,11 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-brand-light;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-bde-frost;
   }
 
   .card {
-    @apply bg-brand-teal/60 backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-green/10;
+    @apply bg-bde-deep/60 backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-bde-violet/10;
   }
   
   /* Add this new class to disable hover effects */
@@ -125,11 +181,11 @@ html {
   }
   
   .mobile-nav {
-    @apply fixed top-0 left-0 w-full z-50 bg-brand-dark/95 backdrop-blur-md;
+    @apply fixed top-0 left-0 w-full z-50 bg-bde-void/95 backdrop-blur-md;
   }
   
   .mobile-menu {
-    @apply fixed top-16 left-0 w-full bg-brand-dark/95 backdrop-blur-md p-4 shadow-lg rounded-b-lg;
+    @apply fixed top-16 left-0 w-full bg-bde-void/95 backdrop-blur-md p-4 shadow-lg rounded-b-lg;
   }
   
   /* Improved spacing for mobile */
@@ -193,7 +249,7 @@ html {
 
 /* Ensure proper stacking context */
 body {
-  @apply bg-brand-dark text-brand-light overflow-x-hidden;
+  @apply bg-bde-void text-bde-frost overflow-x-hidden;
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
@@ -274,7 +330,7 @@ body {
 
 /* Add fallback styles to ensure content is visible */
 body, html {
-  @apply bg-brand-dark text-brand-light;
+  @apply bg-bde-void text-bde-frost;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -443,7 +499,7 @@ img {
   
   /* Make the floating keywords more visible on tablet */
   .service-icon {
-    background-color: rgba(20, 184, 166, 0.5) !important; /* Slightly more opaque */
+    background-color: rgb(var(--bde-deep) / 0.5) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 20;
   }
@@ -472,7 +528,7 @@ img {
   
   /* Service buttons styling */
   .tablet-service-button {
-    border: 1px solid rgba(20, 184, 166, 0.3);
+    border: 1px solid rgb(var(--bde-violet-dark) / 0.3);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
     text-align: left;
@@ -482,7 +538,7 @@ img {
   .tablet-service-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    border-color: rgba(20, 184, 166, 0.5);
+    border-color: rgb(var(--bde-violet-dark) / 0.5);
   }
   
   /* Overall spacing for the hero section */
@@ -598,7 +654,7 @@ img {
 .service-icon:hover, .service-icon-mobile:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  border-color: rgba(20, 184, 166, 0.4);
+  border-color: rgb(var(--bde-violet-dark) / 0.4);
 }
 
 .service-icon:active, .service-icon-mobile:active {
@@ -712,15 +768,14 @@ html {
 /* Improve mobile menu visibility */
 @media (max-width: 767px) {
   .mobile-menu {
-    top: 60px; /* Adjust based on your header height */
-    background-color: rgba(10, 32, 38, 0.95); /* brand-dark with opacity */
+    top: 60px;
+    background-color: rgb(var(--bde-void) / 0.95);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(29, 64, 68, 0.5); /* brand-teal with opacity */
+    border: 1px solid rgb(var(--bde-deep) / 0.5);
   }
   
-  /* Mobile navigation specific styles */
   nav.animate-fade-in {
-    background-color: rgba(10, 32, 38, 0.95);
+    background-color: rgb(var(--bde-void) / 0.95);
     backdrop-filter: blur(8px);
     border-radius: 0.5rem;
     margin-top: 0.5rem;
@@ -735,7 +790,7 @@ html {
   }
   
   nav.animate-fade-in button:hover {
-    background-color: rgba(29, 64, 68, 0.5);
+    background-color: rgb(var(--bde-deep) / 0.5);
   }
 }
 

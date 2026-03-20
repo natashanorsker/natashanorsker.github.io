@@ -80,7 +80,7 @@ const TypedLogoText: React.FC<TypedLogoTextProps> = ({
                     className="h-full w-auto"
                   />
                 ) : (
-                  <span className="text-brand-green font-bold text-xs w-2">&nbsp;</span>
+                  <span className="text-bde-green font-bold text-xs w-2">&nbsp;</span>
                 )}
               </span>
             ))}
