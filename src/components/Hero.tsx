@@ -81,7 +81,7 @@ const Hero = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="border-bde-violet/35 text-bde-violet-soft hover:bg-bde-violet/10"
+                className="bg-transparent border-bde-violet/35 text-bde-violet-soft hover:bg-transparent hover:border-bde-violet/60 hover:text-bde-violet-lightest"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Latest Projects
