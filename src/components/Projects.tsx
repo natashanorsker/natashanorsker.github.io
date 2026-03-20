@@ -1,13 +1,7 @@
 
-import { ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const categoryColors: Record<string, string> = {
-  'client-work': 'text-bde-violet',
-  'workshops-strategy': 'text-bde-orange',
-  'public-speaking': 'text-bde-orange',
-  'nominations-awards': 'text-bde-green',
-};
+const categoryColor = 'text-[#6a5080]';
 
 const projects = [
   {
@@ -54,7 +48,7 @@ const projects = [
   }
 ];
 
-const tabTriggerClass = "font-body text-[11px] text-bde-violet-muted data-[state=active]:bg-bde-violet data-[state=active]:text-bde-void";
+const tabTriggerClass = "font-body text-[11px] text-[#6a5080] data-[state=active]:bg-bde-violet data-[state=active]:text-bde-void";
 
 const Projects = () => {
   return (
@@ -150,10 +144,8 @@ interface ProjectProps {
 }
 
 const ProjectCard = ({ project }: ProjectProps) => {
-  const catColor = categoryColors[project.category] ?? 'text-bde-violet-muted';
-
   return (
-    <div className="group overflow-hidden rounded-xl bg-bde-deep border border-bde-violet/15 hover:shadow-lg hover:shadow-bde-violet/[0.12] transition-all">
+    <div className="group overflow-hidden rounded-xl bg-bde-deep border border-bde-violet/10 hover:shadow-lg hover:shadow-bde-violet/[0.12] transition-all">
       <div className="h-48 overflow-hidden">
         <img 
           src={project.image} 
@@ -163,14 +155,10 @@ const ProjectCard = ({ project }: ProjectProps) => {
       </div>
       
       <div className="p-6">
-        <div className="flex justify-between items-center mb-3">
-          <span className={`text-[10px] ${catColor} font-ui uppercase tracking-eyebrow`}>
+        <div className="mb-3">
+          <span className={`text-[10px] ${categoryColor} font-ui tracking-eyebrow`}>
             {project.category.replace('-', ' ')}
           </span>
-          <div className="flex items-center">
-            <span className="text-bde-violet text-[10px] font-body">View Details</span>
-            <ArrowRight size={12} className="ml-1 text-bde-violet" />
-          </div>
         </div>
         
         <h3 className="font-heading font-medium text-base text-bde-frost mb-2">{project.name}</h3>

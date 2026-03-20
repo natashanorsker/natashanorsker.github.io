@@ -17,12 +17,12 @@ const Hero = () => {
   const useGridKeywords = (isTablet && !isPortrait) || isNestHub;
   
   const serviceKeywords = [
-    { icon: Mic, text: "Speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-orange" },
-    { icon: Cpu, text: "AI Solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet" },
-    { icon: Sparkles, text: "Use Case Validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
-    { icon: Code, text: "Development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet" },
-    { icon: ClipboardList, text: "Workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
-    { icon: BarChart2, text: "Data Scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-orange" }
+    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-orange" },
+    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet" },
+    { icon: Sparkles, text: "use_case_validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
+    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet" },
+    { icon: ClipboardList, text: "workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
+    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-orange" }
   ];
   
   const scrollToService = (serviceId: string) => {
@@ -138,7 +138,7 @@ const Hero = () => {
                     className={`absolute -top-10 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <Mic className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">Speaker</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">speaker</span>
                   </button>
                   
                   <button 
@@ -146,7 +146,7 @@ const Hero = () => {
                     className={`absolute -top-6 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <Cpu className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">AI Solutions</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">ai_solutions</span>
                   </button>
                   
                   <button 
@@ -154,7 +154,7 @@ const Hero = () => {
                     className={`absolute top-8 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <Sparkles className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">Use Case</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">use_case</span>
                   </button>
                   
                   <button 
@@ -162,7 +162,7 @@ const Hero = () => {
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <Code className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">Development</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">development</span>
                   </button>
                   
                   <button 
@@ -170,7 +170,7 @@ const Hero = () => {
                     className={`absolute -left-8 top-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <ClipboardList className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">Workshops</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">workshops</span>
                   </button>
                   
                   <button 
@@ -178,7 +178,7 @@ const Hero = () => {
                     className={`absolute -bottom-6 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
                     <BarChart2 className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">Data Scientist</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">data_scientist</span>
                   </button>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const Hero = () => {
                     className={`absolute -top-16 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <Mic className="text-bde-orange/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">Speaker</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">speaker</span>
                   </button>
                   
                   <button 
@@ -210,7 +210,7 @@ const Hero = () => {
                     className={`absolute -top-8 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <Cpu className="text-bde-violet/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">AI Solutions</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">ai_solutions</span>
                   </button>
                   
                   <button 
@@ -218,7 +218,7 @@ const Hero = () => {
                     className={`absolute top-16 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <Sparkles className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">Use Case Validation</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">use_case_validation</span>
                   </button>
                   
                   <button 
@@ -226,7 +226,7 @@ const Hero = () => {
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <Code className="text-bde-violet/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">Development</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">development</span>
                   </button>
                   
                   <button 
@@ -234,7 +234,7 @@ const Hero = () => {
                     className={`absolute -left-32 top-16 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <ClipboardList className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">Workshops</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">workshops</span>
                   </button>
                   
                   <button 
@@ -242,7 +242,7 @@ const Hero = () => {
                     className={`absolute -bottom-8 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
                     <BarChart2 className="text-bde-orange/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">Data Scientist</span>
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">data_scientist</span>
                   </button>
                 </div>
               </div>
