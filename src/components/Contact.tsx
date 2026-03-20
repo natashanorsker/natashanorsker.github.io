@@ -9,12 +9,12 @@ const Contact = () => {
           <div className="inline-block">
             <div className="flex items-center mb-4">
               <div className="h-1 w-12 bg-bde-green mr-4"></div>
-              <span className="text-bde-green font-medium">Get In Touch</span>
+              <span className="eyebrow text-bde-green">get_in_touch</span>
               <div className="h-1 w-12 bg-bde-green ml-4"></div>
             </div>
           </div>
           <h2 className="section-title">Let's Discuss Your Project</h2>
-          <p className="text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-lg">
+          <p className="font-display font-normal text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-[14px] leading-body">
             Have a question or want to explore how we can work together? Reach out and I'll respond as soon as possible.
           </p>
         </div>
@@ -26,9 +26,9 @@ const Contact = () => {
                 <Mail className="text-bde-violet" size={24} />
               </div>
             </div>
-            <h3 className="text-lg font-semibold text-bde-frost mb-1">Email</h3>
-            <p className="text-bde-violet-muted text-sm mb-2 break-all">natashanorsker@bigdataenergy.tech</p>
-            <a href="mailto:natashanorsker@bigdataenergy.tech" className="text-bde-violet text-sm">
+            <h3 className="font-heading font-medium text-base text-bde-frost mb-1">Email</h3>
+            <p className="font-display font-normal text-bde-violet-muted text-[13px] mb-2 break-all">natashanorsker@bigdataenergy.tech</p>
+            <a href="mailto:natashanorsker@bigdataenergy.tech" className="font-display font-normal text-bde-violet text-[12px]">
               Send an email
             </a>
           </div>
@@ -41,9 +41,9 @@ const Contact = () => {
                 </div>
               </a>
             </div>
-            <h3 className="text-lg font-semibold text-bde-frost mb-1">Phone</h3>
-            <p className="text-bde-violet-muted mb-2">+45 22 43 76 29</p>
-            <a href="tel:+4522437629" className="text-bde-violet text-sm">
+            <h3 className="font-heading font-medium text-base text-bde-frost mb-1">Phone</h3>
+            <p className="font-display font-normal text-bde-violet-muted text-[13px] mb-2">+45 22 43 76 29</p>
+            <a href="tel:+4522437629" className="font-display font-normal text-bde-violet text-[12px]">
               Give me a call
             </a>
           </div>
@@ -54,9 +54,9 @@ const Contact = () => {
                 <MapPin className="text-bde-violet" size={24} />
               </div>
             </div>
-            <h3 className="text-lg font-semibold text-bde-frost mb-1">Location</h3>
-            <p className="text-bde-violet-muted mb-2">Copenhagen, DK</p>
-            <p className="text-bde-green text-sm">
+            <h3 className="font-heading font-medium text-base text-bde-frost mb-1">Location</h3>
+            <p className="font-display font-normal text-bde-violet-muted text-[13px] mb-2">Copenhagen, DK</p>
+            <p className="font-display font-normal text-bde-green text-[12px]">
               Remote services worldwide
             </p>
           </div>

@@ -60,13 +60,13 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className="text-bde-violet-muted hover:text-bde-frost transition-colors text-sm font-medium"
+                className="font-ui text-bde-violet-muted hover:text-bde-frost transition-colors text-sm"
               >
                 {link.name}
               </button>
             ))}
             <button onClick={() => scrollToSection('contact')}>
-              <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-medium">
+              <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-display font-medium">
                 Get in Touch
               </Button>
             </button>
@@ -89,13 +89,13 @@ const Navbar = () => {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-bde-violet-muted hover:text-bde-frost transition-colors font-medium text-left"
+                  className="font-ui text-bde-violet-muted hover:text-bde-frost transition-colors text-left"
                 >
                   {link.name}
                 </button>
               ))}
               <button onClick={() => scrollToSection('contact')}>
-                <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-medium w-full">
+                <Button className="bg-bde-green hover:bg-bde-green-dark text-bde-void font-display font-medium w-full">
                   Get in Touch
                 </Button>
               </button>
