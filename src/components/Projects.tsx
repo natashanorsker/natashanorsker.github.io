@@ -1,6 +1,5 @@
 
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const categoryColors: Record<string, string> = {
@@ -55,7 +54,7 @@ const projects = [
   }
 ];
 
-const tabTriggerClass = "text-sm text-bde-violet-muted data-[state=active]:bg-bde-violet data-[state=active]:text-bde-void";
+const tabTriggerClass = "font-body text-[11px] text-bde-violet-muted data-[state=active]:bg-bde-violet data-[state=active]:text-bde-void";
 
 const Projects = () => {
   return (
@@ -65,12 +64,12 @@ const Projects = () => {
           <div className="inline-block">
             <div className="flex items-center mb-4">
               <div className="h-1 w-12 bg-bde-green mr-4"></div>
-              <span className="text-bde-green font-medium">Case Studies</span>
+              <span className="eyebrow text-bde-green">case_studies</span>
               <div className="h-1 w-12 bg-bde-green ml-4"></div>
             </div>
           </div>
           <h2 className="section-title">Featured Projects</h2>
-          <p className="text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-lg">
+          <p className="font-display font-normal text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-[14px] leading-body">
             Explore some of my recent work and see how I've helped clients overcome challenges and achieve their goals.
           </p>
         </div>
@@ -135,12 +134,6 @@ const Projects = () => {
           </TabsContent>
         </Tabs>
         
-        <div className="mt-12 text-center">
-          <Button variant="outline" className="border-bde-violet/35 text-bde-violet-soft hover:bg-bde-violet/10">
-            <a href="#projects">View All Projects</a>
-            <ArrowRight className="ml-2" size={16} />
-          </Button>
-        </div>
       </div>
     </section>
   );
@@ -171,21 +164,21 @@ const ProjectCard = ({ project }: ProjectProps) => {
       
       <div className="p-6">
         <div className="flex justify-between items-center mb-3">
-          <span className={`text-xs ${catColor} font-mono uppercase tracking-wider`}>
+          <span className={`text-[10px] ${catColor} font-ui uppercase tracking-eyebrow`}>
             {project.category.replace('-', ' ')}
           </span>
           <div className="flex items-center">
-            <span className="text-bde-violet text-xs">View Details</span>
+            <span className="text-bde-violet text-[10px] font-body">View Details</span>
             <ArrowRight size={12} className="ml-1 text-bde-violet" />
           </div>
         </div>
         
-        <h3 className="text-xl font-semibold text-bde-frost mb-2">{project.name}</h3>
-        <p className="text-bde-violet-soft/[0.55] text-sm mb-4">{project.description}</p>
+        <h3 className="font-heading font-medium text-base text-bde-frost mb-2">{project.name}</h3>
+        <p className="font-display font-normal text-bde-violet-soft/[0.55] text-[13px] leading-relaxed mb-4">{project.description}</p>
         
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag, idx) => (
-            <span key={idx} className="bg-bde-violet/[0.15] text-bde-violet-dark text-xs px-2 py-1 rounded">
+            <span key={idx} className="font-ui bg-bde-violet/[0.15] text-bde-violet-dark text-[10px] px-2 py-1 rounded">
               {tag}
             </span>
           ))}

@@ -87,12 +87,12 @@ const Services = () => {
           <div className="inline-block">
             <div className="flex items-center mb-4">
               <div className="h-1 w-12 bg-bde-green mr-4"></div>
-              <span className="text-bde-green font-medium">What I Do</span>
+              <span className="eyebrow text-bde-green">what_i_do</span>
               <div className="h-1 w-12 bg-bde-green ml-4"></div>
             </div>
           </div>
           <h2 className="section-title">Services & Expertise</h2>
-          <p className="text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-lg">
+          <p className="font-display font-normal text-bde-violet-soft/[0.55] max-w-2xl mx-auto text-[14px] leading-body">
             From idea to implementation – I help businesses explore, validate, and build AI through workshops, strategic guidance, and hands-on development.
           </p>
         </div>
@@ -112,10 +112,10 @@ const Services = () => {
                     <div className={`p-3 ${ac.badgeBg} rounded-lg`}>
                       <service.icon className={ac.icon} size={24} />
                     </div>
-                    <span className={`${ac.number} text-sm font-mono`}>0{index + 1}</span>
+                    <span className={`${ac.number} text-sm font-body`}>0{index + 1}</span>
                   </div>
-                  <CardTitle className="text-xl font-semibold text-bde-frost">{service.title}</CardTitle>
-                  <CardDescription className="text-bde-violet-soft/[0.55]">
+                  <CardTitle className="text-base font-heading font-medium text-bde-frost">{service.title}</CardTitle>
+                  <CardDescription className="font-display font-normal text-bde-violet-soft/[0.55] text-[13px] leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -124,7 +124,7 @@ const Services = () => {
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex">
                         <div className={`h-1 w-1 rounded-full ${ac.bullet} mr-2 flex-shrink-0 mt-1.5`}></div>
-                        <span className="text-sm text-bde-violet-soft/[0.55] break-words">{feature}</span>
+                        <span className="text-[12px] font-display font-normal text-bde-violet-soft/[0.55] break-words leading-normal">{feature}</span>
                       </li>
                     ))}
                   </ul>
