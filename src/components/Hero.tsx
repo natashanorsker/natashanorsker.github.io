@@ -17,12 +17,12 @@ const Hero = () => {
   const useGridKeywords = (isTablet && !isPortrait) || isNestHub;
   
   const serviceKeywords = [
-    { icon: Mic, text: "Speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-orange" },
-    { icon: Cpu, text: "AI Solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet" },
-    { icon: Sparkles, text: "Use Case Validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
-    { icon: Code, text: "Development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet" },
-    { icon: ClipboardList, text: "Workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
-    { icon: BarChart2, text: "Data Scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-orange" }
+    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-orange" },
+    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet" },
+    { icon: Sparkles, text: "use_case_validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
+    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet" },
+    { icon: ClipboardList, text: "workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
+    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-orange" }
   ];
   
   const scrollToService = (serviceId: string) => {
@@ -32,7 +32,7 @@ const Hero = () => {
     }
   };
 
-  const tagBase = "bg-bde-deep border border-bde-green/18 backdrop-blur-sm rounded-lg flex items-center transition-colors";
+  const tagBase = "bg-bde-deep border border-bde-green/12 backdrop-blur-sm rounded-lg flex items-center transition-colors";
   const tagHover = "hover:bg-bde-deep/80";
   
   return (
@@ -63,7 +63,7 @@ const Hero = () => {
               isPortrait || isTablet ? 'text-3xl mx-auto max-w-2xl' : 'text-3xl md:text-4xl lg:text-5xl'
             }`}>
               Powering Your Business With AI
-              <span className="text-bde-orange block font-display font-light tracking-accent leading-section">From Idea to Implementation</span>
+              <span className="text-bde-green block font-display font-light tracking-accent leading-section">From Idea to Implementation</span>
             </h1>
             
             <p className={`font-body text-bde-violet-soft/60 leading-body ${
@@ -111,8 +111,8 @@ const Hero = () => {
                         onClick={() => scrollToService(keyword.serviceId)}
                         className={`tablet-service-button ${tagBase} ${tagHover} px-3 py-2 justify-center`}
                       >
-                        <keyword.icon className={`${keyword.dotColor} mr-2`} size={16} />
-                        <span className="font-ui text-bde-green-soft whitespace-nowrap">{keyword.text}</span>
+                        <keyword.icon className={`${keyword.dotColor}/70 mr-2`} size={16} />
+                        <span className="font-ui text-bde-green-soft/70 whitespace-nowrap">{keyword.text}</span>
                       </button>
                     ))}
                   </div>
@@ -137,48 +137,48 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-10 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Mic className="text-bde-orange mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">Speaker</span>
+                    <Mic className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">speaker</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-6 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Cpu className="text-bde-violet mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">AI Solutions</span>
+                    <Cpu className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">ai_solutions</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[2].serviceId)}
                     className={`absolute top-8 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Sparkles className="text-bde-green mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">Use Case</span>
+                    <Sparkles className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">use_case</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Code className="text-bde-violet mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">Development</span>
+                    <Code className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">development</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[4].serviceId)}
                     className={`absolute -left-8 top-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <ClipboardList className="text-bde-green mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">Workshops</span>
+                    <ClipboardList className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">workshops</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-6 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <BarChart2 className="text-bde-orange mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft text-[10px]">Data Scientist</span>
+                    <BarChart2 className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-green-soft/70 text-[10px]">data_scientist</span>
                   </button>
                 </div>
               </div>
@@ -201,48 +201,48 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-16 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Mic className="text-bde-orange mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">Speaker</span>
+                    <Mic className="text-bde-orange/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">speaker</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-8 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Cpu className="text-bde-violet mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">AI Solutions</span>
+                    <Cpu className="text-bde-violet/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">ai_solutions</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[2].serviceId)}
                     className={`absolute top-16 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Sparkles className="text-bde-green mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">Use Case Validation</span>
+                    <Sparkles className="text-bde-green/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">use_case_validation</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Code className="text-bde-violet mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">Development</span>
+                    <Code className="text-bde-violet/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">development</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[4].serviceId)}
                     className={`absolute -left-32 top-16 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <ClipboardList className="text-bde-green mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">Workshops</span>
+                    <ClipboardList className="text-bde-green/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">workshops</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-8 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <BarChart2 className="text-bde-orange mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft text-[11px]">Data Scientist</span>
+                    <BarChart2 className="text-bde-orange/70 mr-2" size={18} />
+                    <span className="font-ui text-bde-green-soft/70 text-[11px]">data_scientist</span>
                   </button>
                 </div>
               </div>

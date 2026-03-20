@@ -8,28 +8,24 @@ const accentClasses: Record<Accent, {
   badgeBg: string;
   icon: string;
   number: string;
-  bullet: string;
   glow: string;
 }> = {
   violet: {
-    badgeBg: 'bg-bde-violet/[0.12]',
+    badgeBg: 'bg-bde-violet/[0.08]',
     icon: 'text-bde-violet',
-    number: 'text-bde-violet/[0.15]',
-    bullet: 'bg-bde-violet',
+    number: 'text-bde-violet/[0.12]',
     glow: 'hover:shadow-bde-violet/[0.18]',
   },
   orange: {
-    badgeBg: 'bg-bde-orange/10',
+    badgeBg: 'bg-bde-orange/[0.08]',
     icon: 'text-bde-orange',
-    number: 'text-bde-orange/[0.15]',
-    bullet: 'bg-bde-orange',
+    number: 'text-bde-orange/[0.12]',
     glow: 'hover:shadow-bde-orange/15',
   },
   green: {
     badgeBg: 'bg-bde-green/[0.08]',
     icon: 'text-bde-green',
-    number: 'text-bde-green/[0.15]',
-    bullet: 'bg-bde-green',
+    number: 'text-bde-green/[0.12]',
     glow: 'hover:shadow-bde-green/[0.12]',
   },
 };
@@ -104,13 +100,13 @@ const Services = () => {
               <Card 
                 key={index} 
                 id={`service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`bg-bde-deep border-bde-violet/15 text-bde-frost hover:shadow-lg ${ac.glow} transition-all`}
+                className={`bg-bde-deep border-bde-violet/10 text-bde-frost hover:shadow-lg ${ac.glow} transition-all`}
                 style={{ scrollMarginTop: '100px' }}
               >
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className={`p-3 ${ac.badgeBg} rounded-lg`}>
-                      <service.icon className={ac.icon} size={24} />
+                      <service.icon className={ac.icon} size={20} />
                     </div>
                     <span className={`${ac.number} text-sm font-body`}>0{index + 1}</span>
                   </div>
@@ -123,7 +119,7 @@ const Services = () => {
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex">
-                        <div className={`h-1 w-1 rounded-full ${ac.bullet} mr-2 flex-shrink-0 mt-1.5`}></div>
+                        <div className="h-1 w-1 rounded-full bg-white/25 mr-2 flex-shrink-0 mt-1.5"></div>
                         <span className="text-[12px] font-display font-normal text-bde-violet-soft/[0.55] break-words leading-normal">{feature}</span>
                       </li>
                     ))}
