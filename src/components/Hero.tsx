@@ -17,12 +17,12 @@ const Hero = () => {
   const useGridKeywords = (isTablet && !isPortrait) || isNestHub;
   
   const serviceKeywords = [
-    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-orange" },
-    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet" },
+    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-green" },
+    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-green" },
     { icon: Sparkles, text: "use_case_validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
-    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet" },
+    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-green" },
     { icon: ClipboardList, text: "workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
-    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-orange" }
+    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-green" }
   ];
   
   const scrollToService = (serviceId: string) => {
@@ -32,8 +32,8 @@ const Hero = () => {
     }
   };
 
-  const tagBase = "bg-bde-deep border border-bde-green/12 backdrop-blur-sm rounded-lg flex items-center transition-colors";
-  const tagHover = "hover:bg-bde-deep/80";
+  const tagBase = "bg-bde-deep/80 border border-bde-green/12 backdrop-blur-sm rounded-lg flex items-center transition-colors";
+  const tagHover = "hover:bg-bde-deep";
   
   return (
     <section 
@@ -42,10 +42,31 @@ const Hero = () => {
         isTablet ? 'min-h-[90vh] pt-24 pb-8' : isMobile ? 'min-h-screen pt-16' : 'min-h-screen pt-16'
       }`}
     >
-      {/* Background gradient blobs */}
+      {/* Background gradient orbs + film grain */}
       <div className="pointer-events-none absolute inset-0">
+        {/* Violet orb — atmospheric outer glow */}
         <div className="absolute -top-1/4 -left-1/4 w-[60%] h-[60%] rounded-full bg-bde-violet/[0.13] blur-[120px]" />
+        {/* Violet orb — subtle hot core */}
+        <div className="absolute -top-[8%] -left-[8%] w-[28%] h-[28%] rounded-full bg-bde-violet/[0.14] blur-[90px]" />
+
+        {/* Green orb — atmospheric outer glow */}
         <div className="absolute -bottom-1/4 -right-1/4 w-[60%] h-[60%] rounded-full bg-bde-green/[0.13] blur-[120px]" />
+        {/* Green orb — mid bloom */}
+        <div className="absolute -bottom-[10%] -right-[10%] w-[35%] h-[35%] rounded-full bg-bde-green/[0.22] blur-[160px]" />
+        {/* Green orb — tight core */}
+        <div className="absolute -bottom-[2%] -right-[2%] w-[15%] h-[15%] rounded-full bg-bde-green/[0.14] blur-[70px]" />
+
+        {/* Dual-pass SVG film grain */}
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <filter id="grain-fine">
+            <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch" />
+          </filter>
+          <filter id="grain-coarse">
+            <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" stitchTiles="stitch" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#grain-fine)" opacity="0.12" style={{ mixBlendMode: 'overlay' }} />
+          <rect width="100%" height="100%" filter="url(#grain-coarse)" opacity="0.07" style={{ mixBlendMode: 'screen' }} />
+        </svg>
       </div>
 
       <div className={`relative container mx-auto ${isTablet ? 'px-8 py-4' : 'px-4 py-8'}`}>
@@ -137,7 +158,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-10 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Mic className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <Mic className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
                     <span className="font-ui text-bde-green-soft/70 text-[10px]">speaker</span>
                   </button>
                   
@@ -145,7 +166,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-6 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Cpu className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <Cpu className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
                     <span className="font-ui text-bde-green-soft/70 text-[10px]">ai_solutions</span>
                   </button>
                   
@@ -161,7 +182,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Code className="text-bde-violet/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <Code className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
                     <span className="font-ui text-bde-green-soft/70 text-[10px]">development</span>
                   </button>
                   
@@ -177,7 +198,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-6 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <BarChart2 className="text-bde-orange/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <BarChart2 className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
                     <span className="font-ui text-bde-green-soft/70 text-[10px]">data_scientist</span>
                   </button>
                 </div>
@@ -201,7 +222,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-16 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Mic className="text-bde-orange/70 mr-2" size={18} />
+                    <Mic className="text-bde-green/70 mr-2" size={18} />
                     <span className="font-ui text-bde-green-soft/70 text-[11px]">speaker</span>
                   </button>
                   
@@ -209,7 +230,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-8 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Cpu className="text-bde-violet/70 mr-2" size={18} />
+                    <Cpu className="text-bde-green/70 mr-2" size={18} />
                     <span className="font-ui text-bde-green-soft/70 text-[11px]">ai_solutions</span>
                   </button>
                   
@@ -225,7 +246,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Code className="text-bde-violet/70 mr-2" size={18} />
+                    <Code className="text-bde-green/70 mr-2" size={18} />
                     <span className="font-ui text-bde-green-soft/70 text-[11px]">development</span>
                   </button>
                   
@@ -241,7 +262,7 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-8 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <BarChart2 className="text-bde-orange/70 mr-2" size={18} />
+                    <BarChart2 className="text-bde-green/70 mr-2" size={18} />
                     <span className="font-ui text-bde-green-soft/70 text-[11px]">data_scientist</span>
                   </button>
                 </div>
