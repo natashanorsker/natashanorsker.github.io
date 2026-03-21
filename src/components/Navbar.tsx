@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import TypedLogoText from "./TypedLogoText";
-import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,17 +41,26 @@ const Navbar = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-bde-void/90 backdrop-blur-lg" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 w-full z-50 px-4 pt-4">
+      <div
+        className={`container mx-auto px-6 py-3 rounded-xl transition-all duration-300 ${
+          isScrolled
+            ? "bg-bde-void/80 backdrop-blur-lg"
+            : "bg-bde-void/40 backdrop-blur-sm"
+        }`}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center" onClick={() => scrollToSection('home')}>
+            <a
+              href={window.location.pathname}
+              className="flex items-center"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.replace(window.location.pathname);
+              }}
+            >
               <TypedLogoText />
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
