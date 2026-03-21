@@ -17,12 +17,12 @@ const Hero = () => {
   const useGridKeywords = (isTablet && !isPortrait) || isNestHub;
   
   const serviceKeywords = [
-    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-green" },
-    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-green" },
-    { icon: Sparkles, text: "use_case_validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-green" },
-    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-green" },
-    { icon: ClipboardList, text: "workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-green" },
-    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-green" }
+    { icon: Mic, text: "speaker", position: "top-left", serviceId: "service-public-speaking-&-keynotes", dotColor: "text-bde-violet-muted" },
+    { icon: Cpu, text: "ai_solutions", position: "top-right", serviceId: "service-end-to-end-ai-solutions", dotColor: "text-bde-violet-muted" },
+    { icon: Sparkles, text: "use_case_validation", position: "middle-right", serviceId: "service-ai-use-case-validation-&-discovery", dotColor: "text-bde-violet-muted" },
+    { icon: Code, text: "development", position: "bottom-right", serviceId: "service-full-stack-development", dotColor: "text-bde-violet-muted" },
+    { icon: ClipboardList, text: "workshops", position: "middle-left", serviceId: "service-workshops-&-training", dotColor: "text-bde-violet-muted" },
+    { icon: BarChart2, text: "data_scientist", position: "bottom-left", serviceId: "service-freelance-data-scientist", dotColor: "text-bde-violet-muted" }
   ];
   
   const scrollToService = (serviceId: string) => {
@@ -32,7 +32,7 @@ const Hero = () => {
     }
   };
 
-  const tagBase = "bg-bde-deep/80 border border-bde-green/12 backdrop-blur-sm rounded-lg flex items-center transition-colors";
+  const tagBase = "group bg-bde-deep/80 border border-bde-violet-muted/12 backdrop-blur-sm rounded-lg flex items-center transition-colors";
   const tagHover = "hover:bg-bde-deep";
   
   return (
@@ -132,8 +132,8 @@ const Hero = () => {
                         onClick={() => scrollToService(keyword.serviceId)}
                         className={`tablet-service-button ${tagBase} ${tagHover} px-3 py-2 justify-center`}
                       >
-                        <keyword.icon className={`${keyword.dotColor}/70 mr-2`} size={16} />
-                        <span className="font-ui text-bde-green-soft/70 whitespace-nowrap">{keyword.text}</span>
+                        <keyword.icon className={`${keyword.dotColor} group-hover:text-bde-green transition-colors mr-2`} size={16} />
+                        <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors whitespace-nowrap">{keyword.text}</span>
                       </button>
                     ))}
                   </div>
@@ -158,48 +158,48 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-10 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Mic className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">speaker</span>
+                    <Mic className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">speaker</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-6 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Cpu className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">ai_solutions</span>
+                    <Cpu className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">ai_solutions</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[2].serviceId)}
                     className={`absolute top-8 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Sparkles className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">use_case</span>
+                    <Sparkles className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">use_case</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <Code className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">development</span>
+                    <Code className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">development</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[4].serviceId)}
                     className={`absolute -left-8 top-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <ClipboardList className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">workshops</span>
+                    <ClipboardList className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">workshops</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-6 -left-8 ${tagBase} ${tagHover} px-2 py-1 service-icon-mobile ${isPortrait && !isMobile ? 'portrait-tablet-keyword' : ''}`}
                   >
-                    <BarChart2 className="text-bde-green/70 mr-1" size={isPortrait && !isMobile ? 16 : 12} />
-                    <span className="font-ui text-bde-green-soft/70 text-[10px]">data_scientist</span>
+                    <BarChart2 className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-1" size={isPortrait && !isMobile ? 16 : 12} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[10px]">data_scientist</span>
                   </button>
                 </div>
               </div>
@@ -222,48 +222,48 @@ const Hero = () => {
                     onClick={() => scrollToService(serviceKeywords[0].serviceId)}
                     className={`absolute -top-16 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Mic className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">speaker</span>
+                    <Mic className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">speaker</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[1].serviceId)}
                     className={`absolute -top-8 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Cpu className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">ai_solutions</span>
+                    <Cpu className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">ai_solutions</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[2].serviceId)}
                     className={`absolute top-16 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Sparkles className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">use_case_validation</span>
+                    <Sparkles className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">use_case_validation</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[3].serviceId)}
                     className={`absolute bottom-0 right-0 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <Code className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">development</span>
+                    <Code className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">development</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[4].serviceId)}
                     className={`absolute -left-32 top-16 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <ClipboardList className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">workshops</span>
+                    <ClipboardList className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">workshops</span>
                   </button>
                   
                   <button 
                     onClick={() => scrollToService(serviceKeywords[5].serviceId)}
                     className={`absolute -bottom-8 -left-32 ${tagBase} ${tagHover} px-4 py-2 service-icon`}
                   >
-                    <BarChart2 className="text-bde-green/70 mr-2" size={18} />
-                    <span className="font-ui text-bde-green-soft/70 text-[11px]">data_scientist</span>
+                    <BarChart2 className="text-bde-violet-muted group-hover:text-bde-green transition-colors mr-2" size={18} />
+                    <span className="font-ui text-bde-violet-muted group-hover:text-bde-green transition-colors text-[11px]">data_scientist</span>
                   </button>
                 </div>
               </div>
