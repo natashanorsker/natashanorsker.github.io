@@ -6,6 +6,17 @@ const categoryColor = 'text-[#6a5080]';
 const projects = [
   {
     category: "workshops-talks",
+    type: "published",
+    name: "Tænk agentisk",
+    subtitle: "AI Agentbogen · Jonathan Løw · September 2025",
+    description: "Contributing author in AI Agentbogen — 'Fra hype til handling' by Jonathan Løw, described as Denmark's most important book on AI in 2025. The book equips readers with concrete tools, cases, and insights from top executives and AI experts including voices from Google, Microsoft, and IBM. Wrote the chapter 'Tænk agentisk: Hvordan virksomheder og medarbejdere kan forberede sig på AI-agenter' — a practical guide covering what agentic thinking means, how AI agents combine reasoning, tools, and knowledge to solve tasks, and concrete steps for mapping your own workflows to prepare for agents.",
+    quote: "\"Thinking agentically is not just for AI engineers — it's a way of structuring our work so we are ready for the future. The better we understand our own processes, the easier it becomes to hand them over to AI agents.\" — Natasha Norsker, AI Agentbogen",
+    tags: ["Published Author", "AI Agents", "AI Agentbogen"],
+    image: "/images/ai_agents_book.png",
+    link: { label: "AI Agentbogen", url: "https://www.bog-ide.dk/produkt/5929066/jonathan-loew-agentbogen?srsltid=AfmBOopKHFUHJvuTVr9mQ_QASuSSvL2Z7MEtCdn7Ih5p7tC_JIIsAMwe" }
+  },
+  {
+    category: "workshops-talks",
     type: "talk",
     name: "Executive Conversations: Fra Hype til Afkast",
     subtitle: "Computerworld · SAP · SOHO House · January 2025",
