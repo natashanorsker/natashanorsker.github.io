@@ -43,7 +43,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/in/natashanorsker/" className="text-bde-frost/70 hover:text-bde-violet transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:hello@bigdataenergy.com" className="text-bde-frost/70 hover:text-bde-violet transition-colors">
+              <a href="mailto:natashanorsker@bigdataenergy.tech" className="text-bde-frost/70 hover:text-bde-violet transition-colors">
                 <Mail size={20} />
               </a>
               <a href="tel:+4522437629" className="text-bde-frost/70 hover:text-bde-violet transition-colors">
