@@ -38,6 +38,7 @@ const About = () => {
               <img 
                 src="/images/speaking-panel.jpg" 
                 alt="Speaking at a professional panel" 
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
             </div>
