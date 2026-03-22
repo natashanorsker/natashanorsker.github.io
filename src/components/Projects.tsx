@@ -7,6 +7,58 @@ const projects = [
   {
     category: "projects",
     type: "client work",
+    name: "AI Content Platform for Pharmaceutical Marketing",
+    subtitle: "Anthill · Arcane · 2024–present",
+    description: "Embedded AI consultant on Arcane — Anthill's production AI platform for pharmaceutical and life science marketing teams. The platform enables compliant content authoring, multilingual generation across 130+ languages, automated citations from approved medical sources, and AI-assisted email production — all within regulatory guardrails built on AWS Bedrock.",
+    quote: "Working across the full content pipeline — prompt engineering for pharmaceutical compliance, multilingual generation, RAG over approved medical documents, and AI image generation with brand-compliant styles. Building systems where the AI understands not just what to write, but what it is and isn't allowed to say in a heavily regulated industry.",
+    tags: ["AWS Bedrock", "Pharmaceutical AI", "Prompt Engineering", "RAG", "Multilingual", "Production ML"],
+    image: "/images/anthill.png",
+    link: { label: "Anthill", url: "https://www.anthill.technology/arcane" }
+  },
+  {
+    category: "projects",
+    type: "client work",
+    name: "Insurance-Compliant Product Matching for Contents Claims",
+    subtitle: "Todai · InsurTech Client · 2022–2024",
+    description: "Built a production ML system for a leading Danish InsurTech company — given any product in the world, the model returns the top three closest matches from a curated product database, ensuring every suggestion complies with the customer's insurance policy rules.",
+    quote: "Two compounding challenges made this technically hard. First: the product database spans thousands of product types, each with different attributes, features, and compliance rules — the model had to understand what makes a valid match for a kettle versus a laptop versus a sofa. Second: as a data aggregator, the client ingests product data from sources all over the world — meaning the incoming data was massively inconsistent in structure, format, and completeness. The system had to work reliably across all of it.",
+    tags: ["Product Matching", "Insurance Tech", "Semantic Search", "Data Aggregation", "Compliance", "Production ML"],
+    image: "/images/scalepoint.png"
+  },
+  {
+    category: "projects",
+    type: "research",
+    name: "Detecting Online Predatory Behaviour Using Graph Neural Networks",
+    subtitle: "DTU · Bachelor Thesis · January 2023 · Grade 12",
+    description: "Bachelor thesis investigating whether unsupervised Graph Neural Networks could detect sexual predators on online gaming platforms — without relying on linguistic analysis. Developed in collaboration with Aiba, a company specialising in Author Input Behaviour Analysis, and supervised by DTU and NTNU. Examined social network patterns within a children's online social gaming platform to identify anomalous behaviour indicative of grooming.",
+    quote: "Rather than analysing what predators say, the thesis examined how they behave — using graph structure to surface anomalous social network patterns that linguistic models alone would miss. Anomalous users exhibited statistically distinct behaviour in terms of their network connections and interaction patterns.",
+    tags: ["Graph Neural Networks", "Child Safety", "Anomaly Detection", "DTU", "Unsupervised ML"],
+    image: "/images/bachelor_thesis_2.png",
+    link: { label: "research report", url: "/documents/Bachelor_Project.pdf" }
+  },
+  {
+    category: "projects",
+    type: "client work",
+    name: "Multi-Market Sales Forecasting Model for a Global Retailer",
+    subtitle: "eCapacity · 2020–2022",
+    description: "Built and maintained a production sales forecasting system for a leading global retailer alongside a small team — used directly by senior decision makers to forecast country and global sales and model the impact of promotions across markets. The project ran from 2020 onward, making it one of the most demanding forecasting environments imaginable: physical stores closing overnight, consumer behaviour diverging completely from historical data, and geopolitical disruption layered on top.",
+    quote: "Forecasting drivers included holidays, day of week, product promotions, store closures, and global geopolitical events — built to be robust in conditions where last week's data was no longer a reliable signal for next week's reality. The model had to reason about what it didn't know as much as what it did.",
+    tags: ["Time Series", "Sales Forecasting", "Production ML", "Promotion Modelling", "Multi-Market"],
+    image: "/images/sales_forecasting.png"
+  },
+  {
+    category: "projects",
+    type: "client work",
+    name: "Analytics Dashboards for Multi-Market Retailers",
+    subtitle: "eCapacity · 2020–2022",
+    description: "Designed and maintained analytics dashboards for multiple large multi-market retailers — each with different data sources, different analytics platforms (Adobe Analytics and Google Analytics), different market setups, and different KPI frameworks. The work required translating highly varied technical environments into clear, decision-ready views for stakeholders who needed to act on the numbers, not debug them.",
+    quote: "Working across Adobe Analytics and Google Analytics for different companies simultaneously builds a rare cross-platform fluency — you stop thinking in tools and start thinking in questions. What does this business need to know, and what is the cleanest path from raw data to that answer?",
+    tags: ["Adobe Analytics", "Google Analytics", "Dashboards", "Multi-Market", "Retail", "Data Strategy"],
+    image: "/images/dashboard.png"
+  },
+  {
+    category: "projects",
+    type: "client work",
     name: "Visual Search & Product Similarity for a Global Jewellery Brand",
     subtitle: "eCapacity · 2021",
     description: "Built a deep learning model for a leading global jewellery brand's e-commerce catalogue using contrastive learning and an autoencoder architecture — trained from scratch before AI tooling was commonplace. The primary goal was visual search: allowing customers to search by image rather than text. In the process, a second use case emerged — product similarity recommendations without the cold start problem that typically plagues new catalogue items.",
@@ -303,12 +355,9 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: ProjectProps) => {
   const label = project.type ?? project.category.replace(/-/g, ' ');
-  const isVioletPill = project.category === 'projects';
-  const pillClass = isVioletPill
-    ? 'bg-bde-violet/10 text-bde-violet border border-bde-violet/20 rounded-full px-2.5 py-0.5'
-    : project.type
-      ? 'bg-bde-green/10 text-bde-green border border-bde-green/20 rounded-full px-2.5 py-0.5'
-      : categoryColor;
+  const pillClass = project.type
+    ? 'bg-bde-green/10 text-bde-green border border-bde-green/20 rounded-full px-2.5 py-0.5'
+    : categoryColor;
 
   return (
     <div className="group overflow-hidden rounded-xl bg-bde-deep border border-bde-violet/10 hover:shadow-lg hover:shadow-bde-violet/[0.12] transition-all">
@@ -325,7 +374,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
       <div className="p-6">
         <div className="mb-3 flex items-center justify-between">
           <span className={`text-[10px] font-ui tracking-eyebrow inline-flex items-center gap-1.5 ${pillClass}`}>
-            {(project.type || isVioletPill) && <span className={`w-1.5 h-1.5 rounded-full ${isVioletPill ? 'bg-bde-violet' : 'bg-bde-green'}`} />}
+            {project.type && <span className="w-1.5 h-1.5 rounded-full bg-bde-green" />}
             {label}
           </span>
           {project.link && (
