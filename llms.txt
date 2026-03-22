@@ -1,0 +1,29 @@
+# Big Data Energy
+
+> Freelance AI consultancy led by Natasha Norsker — helping businesses leverage AI and data science from idea to implementation. Based in Copenhagen, Denmark, serving clients worldwide.
+
+## About
+
+- [Homepage](https://bigdataenergy.tech/)
+- [LinkedIn](https://www.linkedin.com/in/natashanorsker/)
+
+Natasha Norsker is a freelance data scientist and ML engineer with a degree in AI & Data from DTU (Technical University of Denmark), 6+ years of hands-on experience, and a track record of delivering real-world AI impact across industries. Certified Google Cloud Professional Machine Learning Engineer. Founder of Women in AI Denmark.
+
+## Services
+
+- Freelance Data Scientist: Embedded ML expertise in your team — modelling, evaluation, deployment
+- AI Use Case Validation & Discovery: Structured workshops to identify and prioritize valuable AI opportunities
+- Public Speaking & Keynotes: Talks on applied AI, generative models, women in tech, and digital innovation (audiences of 20 to 650+)
+- Workshops & Training: Hands-on sessions for teams and leaders, from 2-hour intros to full-day deep dives
+- End-to-End AI Solutions: Full-cycle AI development — scoping, modelling, deployment, handover
+- Full-Stack Development: Web apps, APIs, and deployment pipelines for data and AI workflows
+
+## Projects
+
+- [Full project details](https://bigdataenergy.tech/llms-full.txt)
+
+## Contact
+
+- Email: natashanorsker@bigdataenergy.tech
+- Phone: +45 22 43 76 29
+- Location: Copenhagen, Denmark (remote services worldwide)
