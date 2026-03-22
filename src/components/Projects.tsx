@@ -5,6 +5,17 @@ const categoryColor = 'text-[#6a5080]';
 
 const projects = [
   {
+    category: "projects",
+    type: "client work",
+    name: "Visual Search & Product Similarity for a Global Jewellery Brand",
+    subtitle: "eCapacity · 2021",
+    description: "Built a deep learning model for a leading global jewellery brand's e-commerce catalogue using contrastive learning and an autoencoder architecture — trained from scratch before AI tooling was commonplace. The primary goal was visual search: allowing customers to search by image rather than text. In the process, a second use case emerged — product similarity recommendations without the cold start problem that typically plagues new catalogue items.",
+    quote: "A research project investigating whether a model could be trained from product catalogue images alone to understand the visual nuances of jewellery — distinguishing hoop earrings from bangles, rings from pendants. No off-the-shelf AI APIs, no foundation models. A neural network built and trained from the ground up to see jewellery the way a customer does.",
+    tags: ["Deep Learning", "Contrastive Learning", "Visual Search", "Recommendation Systems", "E-commerce"],
+    image: "/images/fagproject.png",
+    link: { label: "research report", url: "/documents/Fagprojekt_Rapport.pdf" }
+  },
+  {
     category: "workshops-talks",
     type: "published",
     name: "Tænk agentisk",
@@ -226,6 +237,7 @@ const Projects = () => {
           <div className="flex justify-center mb-10">
             <TabsList className="bg-bde-deep/30 backdrop-blur-sm">
               <TabsTrigger value="all" className={tabTriggerClass}>All</TabsTrigger>
+              <TabsTrigger value="projects" className={tabTriggerClass}>Projects</TabsTrigger>
               <TabsTrigger value="workshops-talks" className={tabTriggerClass}>Workshops & Talks</TabsTrigger>
               <TabsTrigger value="recognition" className={tabTriggerClass}>Recognition</TabsTrigger>
             </TabsList>
@@ -236,6 +248,16 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="projects">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects
+                .filter(project => project.category === 'projects')
+                .map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ))}
             </div>
           </TabsContent>
           
@@ -281,6 +303,12 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: ProjectProps) => {
   const label = project.type ?? project.category.replace(/-/g, ' ');
+  const isVioletPill = project.category === 'projects';
+  const pillClass = isVioletPill
+    ? 'bg-bde-violet/10 text-bde-violet border border-bde-violet/20 rounded-full px-2.5 py-0.5'
+    : project.type
+      ? 'bg-bde-green/10 text-bde-green border border-bde-green/20 rounded-full px-2.5 py-0.5'
+      : categoryColor;
 
   return (
     <div className="group overflow-hidden rounded-xl bg-bde-deep border border-bde-violet/10 hover:shadow-lg hover:shadow-bde-violet/[0.12] transition-all">
@@ -296,8 +324,8 @@ const ProjectCard = ({ project }: ProjectProps) => {
       
       <div className="p-6">
         <div className="mb-3 flex items-center justify-between">
-          <span className={`text-[10px] font-ui tracking-eyebrow inline-flex items-center gap-1.5 ${project.type ? 'bg-bde-green/10 text-bde-green border border-bde-green/20 rounded-full px-2.5 py-0.5' : categoryColor}`}>
-            {project.type && <span className="w-1.5 h-1.5 rounded-full bg-bde-green" />}
+          <span className={`text-[10px] font-ui tracking-eyebrow inline-flex items-center gap-1.5 ${pillClass}`}>
+            {(project.type || isVioletPill) && <span className={`w-1.5 h-1.5 rounded-full ${isVioletPill ? 'bg-bde-violet' : 'bg-bde-green'}`} />}
             {label}
           </span>
           {project.link && (
