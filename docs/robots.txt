@@ -1,3 +1,4 @@
+# Search engine crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +11,43 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI citation crawlers (link back to your site)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# AI training crawlers (absorb content for model training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Default
 User-agent: *
 Allow: /
+
+Sitemap: https://bigdataenergy.tech/sitemap.xml
