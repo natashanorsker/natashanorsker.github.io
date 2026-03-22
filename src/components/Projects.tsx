@@ -18,6 +18,26 @@ const projects = [
   {
     category: "projects",
     type: "client work",
+    name: "Automated CO₂ Emissions Tracking from Supplier Invoices",
+    subtitle: "Todai · 2022–2024",
+    description: "Built an end-to-end CO₂ emissions pipeline for a Danish B2B services marketplace — automatically calculating the carbon footprint of every office service purchase across their client base. The system works across the full chain: extracting and classifying product data from unstructured supplier documents, matching those products to emission databases using LLM embeddings, converting to standardised kg-equivalent units, and allocating total CO₂ responsibility back to each company per vendor per month.",
+    quote: "The hard part was not calculating emissions — it was the matching. Invoice line items are messy, inconsistent, and written by hundreds of different vendors. Climate databases like Klimadatabasen describe products in precise scientific terms. Getting those two worlds to meet reliably, at scale, across all product categories, is where the real engineering challenge lies. Driven in part by EU regulation that simultaneously makes CO₂ reporting mandatory and technically complex.",
+    tags: ["OCR", "LLM Embeddings", "Climate Data", "EU Compliance", "CO₂ Tracking", "NLP"],
+    image: "/images/co2_invoice_emission.png"
+  },
+  {
+    category: "projects",
+    type: "client work",
+    name: "Product Taxonomy & Deduplication for a Global Social Shopping Platform",
+    subtitle: "Todai · Social Shopping Client · 2022–2024",
+    description: "Worked on the product classification and taxonomy system for a rapidly scaling social shopping platform — users can add any product from any website in the world, meaning an enormous variety of inconsistently structured product data needs to be classified into one unified taxonomy tree. The core challenge: designing a taxonomy comprehensive enough to cover everything people wish for, balanced enough to be useful for data insights, and robust enough to handle products that genuinely belong to multiple categories at once.",
+    quote: "Three compounding problems: natural class imbalance — far more people wish for makeup than specialist hardware, so perfect balance is neither achievable nor desirable; products that genuinely fall under multiple taxonomy branches simultaneously; and recognising that the same product appearing on different retailer websites is actually one item, despite completely different titles, images, and pricing. Solved using a combination of ML models and LLMs.",
+    tags: ["Taxonomy Classification", "Product Deduplication", "NLP", "LLMs", "E-commerce", "Data Aggregation"],
+    image: "/images/taxonomy_tree.png"
+  },
+  {
+    category: "projects",
+    type: "client work",
     name: "Insurance-Compliant Product Matching for Contents Claims",
     subtitle: "Todai · InsurTech Client · 2022–2024",
     description: "Built a production ML system for a leading Danish InsurTech company — given any product in the world, the model returns the top three closest matches from a curated product database, ensuring every suggestion complies with the customer's insurance policy rules.",
